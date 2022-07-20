@@ -12,7 +12,13 @@
       href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"
     />
 
-    <!--Castom styles-->
+    <!--Animate.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!--Custom styles-->
     <link rel="stylesheet" href="./css/styles.css" />
 
     <!--Fonts-->
@@ -76,9 +82,22 @@
       <section class="hero">
         <div class="hero-container container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button class="hero-btn btn" type="button">Заказать услугу</button>
+          <button class="hero-btn btn" type="button" data-modal-open>
+            Заказать услугу
+          </button>
         </div>
       </section>
+
+      <!--Modal-->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="modal-close-btn btn" data-modal-close>
+            <svg class="modal-close-icon" width="18" height="18">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
 
       <!--Benefits-->
       <section class="benefits">
@@ -142,30 +161,45 @@
       <section class="service">
         <div class="container">
           <h2 class="service-title">Чем мы занимаемся</h2>
+
           <ul class="service-list list">
             <li class="service-item">
               <img
+                class="service-photo"
                 src="./images/studio-page/studio-img-1.jpg"
                 alt="рабочий стол: монитор, планшет с кодом, работник печатает на клавиауре, подсвечено розовым"
                 width="370"
                 height="294"
               />
+              <div class="service-overlay">
+                <p class="service-description">Десктопные приложения</p>
+              </div>
             </li>
+
             <li class="service-item">
               <img
+                class="service-photo"
                 src="./images/studio-page/studio-img-2.jpg"
                 alt="ноутбук с примерами интерфейсов для смартфонов, в руках работника смартфон. "
                 width="370"
                 height="294"
               />
+              <div class="service-overlay">
+                <p class="service-description">Мобильные приложения</p>
+              </div>
             </li>
+
             <li class="service-item">
               <img
+                class="service-photo"
                 src="./images/studio-page/studio-img-3.jpg"
                 alt="в руках дизайнера пэн и планшет с примером цветового куга разделенного на деления "
                 width="370"
                 height="294"
               />
+              <div class="service-overlay">
+                <p class="service-description">Дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -577,5 +611,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
